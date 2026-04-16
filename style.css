@@ -1,0 +1,784 @@
+/* ==== Variáveis Globais (Dark Theme - Laranja) ==== */
+:root {
+    /* Cores de Fundo / Backgrounds baseados na imagem */
+    --color-bg-main: #0f0f11;       /* Fundo bem escuro */
+    --color-bg-alt: #1a1a1c;        /* Um tom sutilmente mais claro para seções/cards */
+    
+    /* Textos */
+    --color-text-main: #ffffff;     /* Branco puro para títulos */
+    --color-text-muted: #9ca3af;    /* Cinza para textos secundários */
+    
+    /* Primária (Laranja moderno da referência) */
+    --color-primary: #1120eb;       /* Orange 500 */
+    --color-primary-hover: #1120eb; /* Orange 600 */
+    
+    /* Bordas e Elementos Escuros */
+    --color-border: #334155;        /* Slate 700 */
+    --btn-dark: #1f2937;            /* Fundo para botões de ícone */
+    
+    /* Fontes e Transições */
+    --font-main: 'Inter', sans-serif;
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+}
+
+/* ==== Resets Básicos ==== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--color-bg-main);
+    color: var(--color-text-main);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color var(--transition-fast);
+}
+
+ul {
+    list-style: none;
+}
+
+h1, h2, h3 {
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.text-center { text-align: center; }
+
+/* ==== Navbar ==== */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1.5rem 0;
+    background: rgba(15, 15, 17, 0.9); /* Ajustado para a nova cor de fundo */
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: var(--color-primary);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+}
+
+.nav-links a:hover {
+    color: var(--color-text-main);
+}
+
+/* ==== Seção Hero (Atualizada para o layout da imagem) ==== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-top: 5rem;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+    gap: 40px;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 650px;
+}
+
+.greeting {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: var(--color-text-main);
+}
+
+.highlight {
+    color: var(--color-primary);
+}
+
+.intro {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Coluna da Imagem e Efeito Glow Laranja */
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image img {
+    width: 320px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 50%;
+    /* Efeito de brilho laranja */
+    box-shadow: 0 0 60px 10px rgba(32, 78, 231, 0.4); 
+    border: 2px solid rgba(249, 115, 22, 0.1);
+}
+
+/* Botões da Hero */
+.cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.8rem 1.8rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all var(--transition-fast);
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: #fff;
+    box-shadow: 0 4px 14px rgba(249, 115, 22, 0.3); /* Sombra laranja */
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(249, 115, 22, 0.4);
+}
+
+/* Botões quadrados para redes sociais */
+.btn-icon {
+    background-color: var(--btn-dark);
+    color: var(--color-text-muted);
+    padding: 12px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-icon:hover {
+    color: var(--color-text-main);
+    background-color: #374151;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-text-main);
+    border: 1px solid var(--color-border);
+}
+
+.btn-secondary:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    transform: translateY(-2px);
+}
+
+/* ==== Configuração Genérica de Seções ==== */
+.section {
+    padding: 6rem 2rem;
+}
+
+.bg-light {
+    background-color: var(--color-bg-alt);
+}
+
+.section-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background-color: var(--color-primary);
+    border-radius: 2px;
+}
+
+.bg-light .section-title::after, .text-center .section-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.bg-light .section-title, .text-center .section-title {
+    display: block;
+    text-align: center;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--color-text-muted);
+    margin-bottom: 4rem;
+}
+
+/* ==== Seção: Sobre Mim ==== */
+.about-text {
+    margin-top: 3rem;
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    display: grid;
+    gap: 1.5rem;
+}
+
+/* ==== Seção: Habilidades (Skills) ==== */
+/* ==== Seção: Habilidades (Skills) ==== */
+
+/* Organiza os 4 grandes blocos em 2 colunas */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+/* O fundo escuro do Bloco Maior */
+.skill-category {
+    background: #111113; /* Cor escura do fundo do card */
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--color-border);
+    transition: border-color var(--transition-normal);
+}
+
+.skill-category:hover {
+    border-color: var(--color-primary);
+}
+
+/* Título de cada Bloco (Ex: Front-end com o ícone do lado) */
+.skill-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-text-muted);
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 1rem;
+}
+
+.skill-header h3 {
+    color: var(--color-text-main);
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* Grade para as caixinhas menores dentro do bloco */
+.skill-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 itens por linha */
+    gap: 1rem;
+}
+
+/* A caixinha menor de cada habilidade */
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #1a1a1c; /* Tom um pouquinho mais claro que o fundo */
+    padding: 1rem 0.5rem;
+    border-radius: 8px;
+    gap: 0.8rem;
+    transition: all var(--transition-fast);
+    border: 1px solid transparent;
+}
+
+.skill-item:hover {
+    background: #252528;
+    border-color: var(--color-border);
+    transform: translateY(-2px);
+}
+
+/* Tamanho do ícone da linguagem (Devicon e Lucide) */
+.skill-item i, .skill-item svg {
+    font-size: 2.2rem;
+    width: 2.2rem;
+    height: 2.2rem;
+    color: var(--color-primary); /* Cor para os ícones que não são coloridos por padrão */
+}
+
+/* Texto embaixo do ícone */
+.skill-item span {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    text-align: center;
+    font-weight: 500;
+}
+
+/* Responsividade para celular: 1 coluna para tudo */
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    .skill-items {
+        grid-template-columns: repeat(2, 1fr); /* Deixa 2 ícones por linha no celular para não espremer */
+    }
+}
+
+/* ==== Seção: Projetos ==== */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    margin-top: 4rem;
+}
+
+.project-card {
+    background: var(--color-bg-alt);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    transition: transform var(--transition-normal);
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+}
+
+.project-image {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    background-color: var(--color-bg-main);
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-normal);
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+.project-info {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.project-info h3 {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    color: var(--color-text-main);
+}
+
+.project-info p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.project-tags span {
+    font-size: 0.75rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
+    color: var(--color-text-muted);
+    font-weight: 500;
+}
+
+.btn-outline {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.8rem;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all var(--transition-fast);
+    text-align: center;
+}
+
+.btn-outline:hover {
+    background: var(--color-primary);
+    color: #fff;
+}
+
+/* ==== Seção: Contato ==== */
+
+/* Organiza os cards automaticamente no espaço da tela */
+.contact-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Força 2 colunas do mesmo tamanho */
+    gap: 1.5rem;
+    max-width: 700px; /* Reduzi um pouco a largura máxima para os cards não ficarem muito esticados */
+    margin: 0 auto;
+}
+.text-left {
+    text-align: left;
+}
+
+.contact-card {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    background: #111113;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--color-border);
+    transition: all var(--transition-normal);
+    text-decoration: none;
+    color: inherit;
+}
+
+.contact-card:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-5px); /* Efeito de pular para cima igual aos outros cards */
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.contact-icon {
+    background: rgba(249, 115, 22, 0.1); 
+    color: var(--color-primary);
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0; /* Impede o ícone de espremer */
+}
+
+.contact-details h4 {
+    margin-bottom: 0.2rem;
+    font-size: 1.1rem;
+    color: var(--color-text-main);
+}
+
+.contact-details p {
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    margin-bottom: 0.4rem;
+}
+
+.highlight-text {
+    color: var(--color-primary);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+/* ==== Rodapé ==== */
+.footer {
+    padding: 2rem;
+    text-align: center;
+    border-top: 1px solid var(--color-border);
+    background-color: var(--color-bg-main);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.footer p {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-links a {
+    color: var(--color-text-muted);
+    transition: color var(--transition-fast);
+}
+
+.social-links a:hover {
+    color: var(--color-primary);
+}
+
+/* ==== Animação de Scroll Hero ==== */
+.mouse-scroll {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.6;
+    animation: bounce 2s infinite;
+}
+
+.mouse {
+    width: 26px;
+    height: 40px;
+    border: 2px solid var(--color-text-muted);
+    border-radius: 15px;
+    position: relative;
+}
+
+.mouse::before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 8px;
+    background: var(--color-text-muted);
+    border-radius: 2px;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0) translateX(-50%);
+    }
+    40% {
+        transform: translateY(-10px) translateX(-50%);
+    }
+    60% {
+        transform: translateY(-5px) translateX(-50%);
+    }
+}
+
+/* ==== Seção: Experiência (Timeline) ==== */
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 2.5rem;
+}
+
+/* A linha vertical da Timeline */
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: var(--color-border);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+/* A bolinha redonda com o ícone */
+.timeline-dot {
+    position: absolute;
+    left: -2.5rem;
+    transform: translateX(-50%);
+    width: 45px;
+    height: 45px;
+    background: var(--color-bg-main);
+    border: 2px solid var(--color-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    z-index: 1;
+}
+
+/* O quadrado de conteúdo (Card) */
+.timeline-content {
+    background: #111113;
+    padding: 1.8rem;
+    border-radius: 12px;
+    border: 1px solid var(--color-border);
+    transition: all var(--transition-normal);
+}
+
+.timeline-content:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+/* A data com fundo laranja */
+.timeline-date {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    background: rgba(249, 115, 22, 0.1); /* Laranja transparente */
+    color: var(--color-primary);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+}
+
+.timeline-content h3 {
+    color: var(--color-text-main);
+    font-size: 1.3rem;
+    margin-bottom: 0.4rem;
+}
+
+.timeline-content h4 {
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.timeline-content p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Ajustes de Responsividade para Celulares */
+@media (max-width: 768px) {
+    .timeline {
+        padding-left: 1.5rem;
+    }
+    
+    .timeline-dot {
+        width: 35px;
+        height: 35px;
+        left: -1.5rem;
+    }
+    
+    .timeline-dot svg {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+/* ==== Responsividade ==== */
+@media (max-width: 900px) {
+    .hero-container {
+        flex-direction: column-reverse; /* Foto em cima, texto embaixo */
+        text-align: center;
+        padding-top: 3rem;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .cta-buttons {
+        justify-content: center;
+    }
+
+    .hero-image img {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; 
+    }
+    
+    .hero {
+        padding-top: 6rem;
+    }
+    
+    .section {
+        padding: 4rem 1.5rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .contact-item {
+        font-size: 1rem;
+        padding: 1rem 1.5rem;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .skills-grid, .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
