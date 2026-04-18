@@ -13,8 +13,8 @@
     --color-primary-hover: #1120eb; /* Orange 600 */
     
     /* Bordas e Elementos Escuros */
-    --color-border: #334155;        /* Slate 700 */
-    --btn-dark: #1f2937;            /* Fundo para botões de ícone */
+    --color-border: #000000;        /* Slate 700 */
+    --btn-dark: #f8f8f8;            /* Fundo para botões de ícone */
     
     /* Fontes e Transições */
     --font-main: 'Inter', sans-serif;
@@ -165,7 +165,7 @@ h1, h2, h3 {
     border-radius: 50%;
     /* Efeito de brilho laranja */
     box-shadow: 0 0 60px 10px rgba(32, 78, 231, 0.4); 
-    border: 2px solid rgba(249, 115, 22, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Botões da Hero */
@@ -287,7 +287,6 @@ h1, h2, h3 {
     gap: 1.5rem;
 }
 
-/* ==== Seção: Habilidades (Skills) ==== */
 /* ==== Seção: Habilidades (Skills) ==== */
 
 /* Organiza os 4 grandes blocos em 2 colunas */
@@ -708,7 +707,7 @@ h1, h2, h3 {
     line-height: 1.6;
 }
 
-/* Ajustes de Responsividade para Celulares */
+/* ==== Responsividade ==== */
 @media (max-width: 768px) {
     .timeline {
         padding-left: 1.5rem;
@@ -726,7 +725,6 @@ h1, h2, h3 {
     }
 }
 
-/* ==== Responsividade ==== */
 @media (max-width: 900px) {
     .hero-container {
         flex-direction: column-reverse; /* Foto em cima, texto embaixo */
