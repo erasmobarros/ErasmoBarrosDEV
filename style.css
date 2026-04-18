@@ -192,13 +192,13 @@ h1, h2, h3 {
 .btn-primary {
     background-color: var(--color-primary);
     color: #fff;
-    box-shadow: 0 4px 14px rgba(249, 115, 22, 0.3); /* Sombra laranja */
+    box-shadow: 0 4px 14px rgba(230, 227, 225, 0.3); /* Sombra laranja */
 }
 
 .btn-primary:hover {
     background-color: var(--color-primary-hover);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(249, 115, 22, 0.4);
+    box-shadow: 0 6px 20px rgba(201, 197, 194, 0.4);
 }
 
 /* Botões quadrados para redes sociais */
@@ -681,7 +681,7 @@ h1, h2, h3 {
 .timeline-date {
     display: inline-block;
     padding: 0.4rem 1rem;
-    background: rgba(249, 115, 22, 0.1); /* Laranja transparente */
+    background: rgba(253, 253, 253, 0.1); /* Laranja transparente */
     color: var(--color-primary);
     border-radius: 20px;
     font-size: 0.85rem;
