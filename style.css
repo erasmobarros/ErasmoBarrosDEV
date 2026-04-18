@@ -536,6 +536,14 @@ h1, h2, h3 {
     color: var(--color-primary);
     font-size: 0.9rem;
     font-weight: 500;
+    display: block;
+    word-break: break-word; /* A mágica que impede o texto de esticar a tela */
+}
+
+/* Adicione isso também para garantir que a caixa de texto não ultrapasse o card */
+.contact-details {
+    overflow: hidden;
+    width: 100%;
 }
 /* ==== Rodapé ==== */
 .footer {
