@@ -537,10 +537,9 @@ h1, h2, h3 {
     font-size: 0.9rem;
     font-weight: 500;
     display: block;
-    word-break: break-word; /* A mágica que impede o texto de esticar a tela */
+    word-break: break-word; 
 }
 
-/* Adicione isso também para garantir que a caixa de texto não ultrapasse o card */
 .contact-details {
     overflow: hidden;
     width: 100%;
@@ -716,21 +715,15 @@ h1, h2, h3 {
 }
 
 /* ==== Responsividade ==== */
-@media (max-width: 768px) {
-    .timeline {
-        padding-left: 1.5rem;
-    }
-    
-    .timeline-dot {
-        width: 35px;
-        height: 35px;
-        left: -1.5rem;
-    }
-    
-    .timeline-dot svg {
-        width: 16px;
-        height: 16px;
-    }
+
+/* Regras extras para o e-mail não vazar da tela no celular */
+.contact-details {
+    overflow: hidden;
+    width: 100%;
+}
+
+.highlight-text {
+    word-break: break-word;
 }
 
 @media (max-width: 900px) {
@@ -755,6 +748,7 @@ h1, h2, h3 {
 }
 
 @media (max-width: 768px) {
+    /* Navbar e Seções Gerais */
     .nav-links {
         display: none; 
     }
@@ -777,14 +771,45 @@ h1, h2, h3 {
         justify-content: center;
     }
 
-    .contact-item {
-        font-size: 1rem;
-        padding: 1rem 1.5rem;
-        width: 100%;
-        justify-content: center;
+    /* Linha do Tempo (Experiências) */
+    .timeline {
+        padding-left: 1.5rem;
     }
     
-    .skills-grid, .projects-grid {
-        grid-template-columns: 1fr;
+    .timeline-dot {
+        width: 35px;
+        height: 35px;
+        left: -1.5rem;
+    }
+    
+    .timeline-dot svg {
+        width: 16px;
+        height: 16px;
+    }
+    
+    /* Grades de Habilidades, Projetos e CONTATO (Atualizado) */
+    .skills-grid, 
+    .projects-grid, 
+    .contact-container {
+        grid-template-columns: 1fr; /* Força tudo a ficar em 1 coluna no celular */
+    }
+
+    /* Ajuste fino dos cards de contato para telas pequenas */
+    .contact-card {
+        padding: 1rem;
+        gap: 0.8rem;
+    }
+
+    .contact-icon {
+        padding: 0.8rem;
+    }
+    
+    .contact-details h4 {
+        font-size: 1rem;
+    }
+    
+    .contact-details p, 
+    .highlight-text {
+        font-size: 0.85rem;
     }
 }
