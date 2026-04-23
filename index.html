@@ -11,10 +11,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <script src="https://unpkg.com/lucide@latest"></script> 
 </head>
 <body>
+   <div class="galaxy-bg">
+        <div class="stars"></div>
+        <div class="stars2"></div>
+        <div class="stars3"></div>
+    </div>
+
     <nav class="navbar">
         <div class="nav-content">
             <a href="#" class="logo">JE<span>.</span></a>
@@ -30,10 +34,9 @@
 
     <header class="hero" id="inicio">
         <div class="hero-container">
-            
             <div class="hero-content">
                 <h1 class="greeting">
-                    Olá, eu sou <span class="highlight">Jose Erasmo</span><br>
+                    Olá, eu sou <span class="highlight typing-effect">Jose Erasmo</span><br>
                     Desenvolvedor Fullstack
                 </h1>
                 
@@ -48,7 +51,6 @@
 
                     <a href="https://github.com/erasmobarros" target="_blank" class="btn-icon" aria-label="GitHub">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/c/c2/GitHub_Invertocat_Logo.svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.02c3.14-.35 6.5-1.4 6.5-7.a5.66 5.66 0 0 0-1.63-3.72A5.73 5.73 0 0 0 18 2.s-1.36-.43-4.5 2.1a15.76 15.76 0 0 0-5.3 0C5.36 1.57 4 2 4 2a5.73 5.73 0 0 0-.25 5.2A5.66 5.66 0 0 0 2 11c0 5.6 3.36 6.65 6.5 7a4.8 4.8 0 0 0-1 3.02v4"/><path d="M9 18c-3.14.35-4.5-1.5-4.5-1.5"/></svg>
-                        
                     </a>
                     
                     <a href="https://www.canva.com/design/DAHAHiUJnww/r6bMJ0qbFz1xeRumUH3N9A/view?utm_content=DAHAHiUJnww&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hcf5ac0bb53" target="_blank" class="btn btn-primary">
@@ -60,15 +62,13 @@
             <div class="hero-image">
                 <img src="perfil.jpeg" alt="Foto de Jose Erasmo">
             </div>
-
         </div>
-        
     </header>
 
     <section id="sobre" class="section">
         <div class="section-content">
             <h2 class="section-title">Sobre Mim</h2>
-            <div class="about-text">
+            <div class="about-text hidden">
                 <p>Sou estudante de Ciência da Computação movido pela paixão de resolver problemas complexos através do código. Acredito na tecnologia como ferramenta de transformação e melhoria contínua.</p>
                 <p>Atualmente, divido meus estudos entre o aprimoramento na engenharia de software clássica e a exploração de novas fronteiras em Cloud Computing e práticas de DevOps. Meu objetivo profissional é arquitetar e implementar infraestruturas resilientes e aplicações altamente escaláveis, agregando valor tanto em sistemas locais quanto na nuvem.</p>
             </div>
@@ -81,8 +81,7 @@
             <p class="section-subtitle">Tecnologias com as quais trabalho e as áreas que estou expandindo conhecimentos atualmente.</p>
             
             <div class="skills-grid">
-                
-                <div class="skill-category">
+                <div class="skill-category hidden">
                     <div class="skill-header">
                         <i data-lucide="code-2"></i>
                         <h3>Linguagens & Back-end</h3>
@@ -95,7 +94,7 @@
                     </div>
                 </div>
                 
-                <div class="skill-category">
+                <div class="skill-category hidden delay-1">
                     <div class="skill-header">
                         <i data-lucide="globe"></i>
                         <h3>Front-end & Web</h3>
@@ -107,7 +106,7 @@
                     </div>
                 </div>
 
-                <div class="skill-category">
+                <div class="skill-category hidden delay-2">
                     <div class="skill-header">
                         <i data-lucide="cloud"></i>
                         <h3>Nuvem & Ferramentas</h3>
@@ -119,30 +118,26 @@
                     </div>
                 </div>
 
-               <div class="skill-category">
+               <div class="skill-category hidden delay-3">
                     <div class="skill-header">
                         <i data-lucide="database"></i>
                         <h3>Banco de Dados</h3>
                     </div>
                     <div class="skill-items">
-                        
                         <div class="skill-item">
                             <i class="devicon-sqlite-plain colored"></i>
                             <span>SQLite</span>
                         </div>
-                        
                         <div class="skill-item">
                             <i class="devicon-mysql-plain colored"></i>
                             <span>MySQL</span>
                         </div>
-                        
                        <div class="skill-item">
                             <i class="devicon-postgresql-plain colored"></i>
                             <span>PostgreSQL</span>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -153,8 +148,7 @@
             <p class="section-subtitle">Minha trajetória acadêmica e profissional até o momento.</p>
             
             <div class="timeline">
-                
-                <div class="timeline-item">
+                <div class="timeline-item hidden">
                     <div class="timeline-dot">
                         <i data-lucide="graduation-cap"></i>
                     </div>
@@ -166,7 +160,7 @@
                     </div>
                 </div>
 
-                <div class="timeline-item">
+                <div class="timeline-item hidden">
                     <div class="timeline-dot">
                         <i data-lucide="cloud"></i>
                     </div>
@@ -178,7 +172,7 @@
                     </div>
                 </div>
 
-                <div class="timeline-item">
+                <div class="timeline-item hidden">
                     <div class="timeline-dot">
                         <i data-lucide="code-2"></i>
                     </div>
@@ -189,7 +183,6 @@
                         <p>Criação de aplicações web de ponta a ponta. Desenvolvimento de back-ends robustos, integração com bancos de dados relacionais e APIs de Inteligência Artificial, aliados à construção de interfaces reativas no front-end.</p>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -199,7 +192,7 @@
             <h2 class="section-title">Projetos</h2>
             
             <div class="projects-grid">
-                <div class="project-card">
+                <div class="project-card hidden">
                     <div class="project-image">
                         <img src="https://play-lh.googleusercontent.com/B5L--rMZjsKzPDyc2H-ANr7in2RUjeCUFrRLd8TFUk6t8NFYvV5uSNPTk2hvXLukdto" alt="Hub Educacional Inteligente (AI-Powered)">
                     </div>
@@ -212,14 +205,12 @@
                             <span>CSS Modules</span>
                             <span>Google Generative AI (Gemini)</span>
                             <span>SQLite</span>
-                            
-
                         </div>
                         <a href="https://github.com/erasmobarros/hub-educacional-ia" target="_blank" class="btn btn-outline">Ver no GitHub</a>
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card hidden delay-1">
                     <div class="project-image">
                         <img src="https://esr.rnp.br/wp-content/uploads/2024/03/close-up-de-maos-de-empresarios-apontando-para-o-celular-com-nuvem-poligonal-digital-em-fundo-desfocado-conceito-de-servidor-e-armazenamento-de-dados-scaled-1.jpg" alt="Sistema de Gestão de Estoque e Faturamento (Arquitetura de Microsserviços)">
                     </div>
@@ -232,20 +223,18 @@
                             <span>Entity Framework Core</span>
                             <span>SQLite</span>
                             <span>Angular Material (UI/UX)</span>
-            
-
                         </div>
                         <a href="https://github.com/erasmobarros/Korp_Teste_JoseErasmo" target="_blank" class="btn btn-outline">Ver no GitHub</a>
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card hidden delay-2">
                     <div class="project-image">
                         <img src="https://educ21.com.br/wp-content/uploads/2023/10/educacao-aprimorando-o-conceito-de-aprendizado-menina-aprendendo-por-ar-digital-permitindo-educacao-interativa-e-envolvente-tecnologia-de-ia-generativa.jpg" alt="EduPrompt - Plataforma Educativa com IA">
                     </div>
                     <div class="project-info">
                         <h3>EduPrompt - Plataforma Educativa com IA</h3>
-                        <p>Este é o repositório do EduPrompt, um sistema desenvolvido para o Desafio Técnico de Estágio em IA e Engenharia de Prompt. A plataforma gera materiais educativos altamente personalizados com base no perfil do aluno (idade, nível, estilo de aprendizado) utilizando a API do Google Gemini.</p>
+                        <p>Este é o repositório do EduPrompt, um sistema desenvolvido para o Desafio Técnico de Estágio em IA e Engenharia de Prompt. A plataforma gera materiais educativos altamente personalizados com base no perfil do aluno utilizando a API do Google Gemini.</p>
                         <div class="project-tags">
                             <span>Python</span>
                             <span>JavaScript</span>
@@ -266,7 +255,7 @@
             <p class="section-subtitle" style="margin-bottom: 3rem;">Entre em contato caso queira conversar sobre vagas, tecnologias ou projetos em parceria.</p>
             
             <div class="contact-container">
-                <a href="mailto:erasmobarros197@gmail.com" class="contact-card">
+                <a href="mailto:erasmobarros197@gmail.com" class="contact-card hidden">
                     <div class="contact-icon">
                         <i data-lucide="mail"></i>
                     </div>
@@ -277,18 +266,18 @@
                     </div>
                 </a>
 
-                <a href="https://www.linkedin.com/in/jose-erasmo" target="_blank" class="contact-card">
+                <a href="https://www.linkedin.com/in/jose-erasmo" target="_blank" class="contact-card hidden delay-1">
                     <div class="contact-icon">
                         <i class="devicon-linkedin-plain"></i>
                     </div>
                     <div class="contact-details text-left">
                         <h4>LinkedIn</h4>
                         <p>Conecte-se profissionalmente</p>
-                        <span class="highlight-text">Meu Perfil Profissional</span>
+                        <span class="highlight-text">Meu Perfil</span>
                     </div>
                 </a>
 
-                <a href="https://wa.me/5587981067712" target="_blank" class="contact-card">
+                <a href="https://wa.me/5587981067712" target="_blank" class="contact-card hidden delay-2">
                     <div class="contact-icon">
                         <i data-lucide="message-circle"></i>
                     </div>
@@ -297,26 +286,25 @@
                         <p>Mande uma mensagem direta</p>
                         <span class="highlight-text">+55 (87) 98106-7712</span>
                     </div>
+                </a> 
 
-                     <a href="https://github.com/erasmobarros" target="_blank" class="contact-card">
+                <a href="https://github.com/erasmobarros" target="_blank" class="contact-card hidden delay-3">
                     <div class="contact-icon">
-                        <i data-lucide="message-circle"></i>
+                        <i data-lucide="github"></i> 
                     </div>
                     <div class="contact-details text-left">
                         <h4>GitHub</h4>
                         <p>Acesse meu perfil no GitHub</p>
-                        <span class="highlight-text">Meu perfil no GitHub</span>
+                        <span class="highlight-text">Meu perfil</span>
                     </div>
                 </a>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
     <footer class="footer">
         <div class="footer-content">
-            <p>&copy; 2026 Jose Erasmo Do Nascimento Barros Filho. Desenvolvido com HTML, CSS e JavaScript.</p>
+            <p>© 2026 Jose Erasmo Do Nascimento Barros Filho. Desenvolvido com HTML, CSS e JavaScript.</p>
             <div class="social-links">
                 <a href="https://github.com/erasmobarros" target="_blank" aria-label="GitHub"><i data-lucide="github"></i></a>
                 <a href="https://linkedin.com/in/jose-erasmo" target="_blank" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
@@ -326,6 +314,19 @@
 
     <script>
         lucide.createIcons();
+
+        // Máquina que observa quando os elementos aparecem na tela
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        });
+
+        // Pega todos os elementos com a classe .hidden e manda observar
+        const hiddenElements = document.querySelectorAll('.hidden');
+        hiddenElements.forEach((el) => observer.observe(el));
     </script>
     <script src="script.js"></script>
 

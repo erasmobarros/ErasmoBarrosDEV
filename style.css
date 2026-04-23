@@ -37,9 +37,106 @@ html {
 body {
     font-family: var(--font-main);
     background-color: var(--color-bg-main);
+    /* Adicione estas duas linhas abaixo: */
+    background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 30px 30px;
+    
     color: var(--color-text-main);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+}
+
+/* ==== Efeito de Plano de Fundo: Galáxia Profunda (Sutil) ==== */
+.galaxy-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+    background-color: #070709; /* Fundo quase 100% preto */
+}
+
+/* Efeito de "Nebulosa" (Luzes de nuvem super fracas que respiram no fundo) */
+.galaxy-bg::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: 
+        radial-gradient(circle at 30% 70%, rgba(17, 32, 235, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 70% 30%, rgba(17, 32, 235, 0.02) 0%, transparent 50%);
+    animation: nebulaBreath 20s ease-in-out infinite alternate;
+}
+
+/* Camadas de Poeira Estelar (Muito mais apagadas e lentas) */
+.stars, .stars2, .stars3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 200%; 
+    background: transparent url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png') repeat top center;
+    z-index: 0;
+}
+
+/* Camada 1: Poeira fina no fundo */
+.stars {
+    animation: starMove 200s linear infinite; /* Tempo quase dobrado (muito lento) */
+    opacity: 0.2; /* Quase invisível (10% de opacidade) */
+}
+
+/* Camada 2: Algumas estrelas médias */
+.stars2 {
+    background-size: 300px; 
+    animation: starMove 150s linear infinite;
+    opacity: 0.15; /* 15% de opacidade */
+}
+
+/* Camada 3: Estrelas maiores, mas ainda sutis */
+.stars3 {
+    background-size: 500px;
+    animation: starMoveDiagonal 120s linear infinite;
+    opacity: 0.08; /* Apenas 8% de opacidade para não gritar na tela */
+}
+
+/* Animações ultra suaves */
+@keyframes starMove {
+    from { transform: translateY(0); }
+    to { transform: translateY(-50%); } 
+}
+
+@keyframes starMoveDiagonal {
+    from { transform: translate(0, 0); }
+    to { transform: translate(-5%, -50%); } 
+}
+
+@keyframes nebulaBreath {
+    0% { transform: scale(1) rotate(0deg); }
+    100% { transform: scale(1.1) rotate(2deg); }
+}
+
+/* Tamanhos, posições e velocidades diferentes para cada quadrado */
+.bg-particles li:nth-child(1) { left: 10%; width: 80px; height: 80px; animation-delay: 0s; }
+.bg-particles li:nth-child(2) { left: 20%; width: 80px; height: 80px; animation-delay: 2s; animation-duration: 17s; }
+.bg-particles li:nth-child(3) { left: 25%; animation-delay: 4s; }
+.bg-particles li:nth-child(4) { left: 40%; width: 60px; height: 60px; animation-delay: 0s; animation-duration: 22s; background-color: rgba(17, 32, 235, 0.08); }
+.bg-particles li:nth-child(5) { left: 70%; }
+.bg-particles li:nth-child(6) { left: 80%; width: 120px; height: 120px; animation-delay: 3s; background-color: rgba(17, 32, 235, 0.02); }
+.bg-particles li:nth-child(7) { left: 32%; width: 160px; height: 160px; animation-delay: 7s; }
+.bg-particles li:nth-child(8) { left: 55%; width: 20px; height: 20px; animation-delay: 15s; animation-duration: 40s; }
+.bg-particles li:nth-child(9) { left: 25%; width: 10px; height: 10px; animation-delay: 2s; animation-duration: 40s; background-color: rgba(17, 32, 235, 0.06); }
+.bg-particles li:nth-child(10) { left: 90%; width: 160px; height: 160px; animation-delay: 11s; }
+
+/* Animação: Faz flutuar para cima girando lentamente */
+@keyframes floatUp {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(-1000px) rotate(600deg); opacity: 0; }
 }
 
 a {
@@ -105,7 +202,7 @@ h1, h2, h3 {
     color: var(--color-text-main);
 }
 
-/* ==== Seção Hero (Atualizada para o layout da imagem) ==== */
+/* ==== Seção Hero ==== */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -163,8 +260,8 @@ h1, h2, h3 {
     height: 320px;
     object-fit: cover;
     border-radius: 50%;
-    /* Efeito de brilho laranja */
-    box-shadow: 0 0 60px 10px rgba(32, 78, 231, 0.4); 
+    /* Efeito de brilho da cor primária */
+    box-shadow: 0 0 60px 10px rgba(17, 32, 235, 0.4); 
     border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -192,7 +289,7 @@ h1, h2, h3 {
 .btn-primary {
     background-color: var(--color-primary);
     color: #fff;
-    box-shadow: 0 4px 14px rgba(230, 227, 225, 0.3); /* Sombra laranja */
+    box-shadow: 0 4px 14px rgba(230, 227, 225, 0.3);
 }
 
 .btn-primary:hover {
@@ -288,8 +385,6 @@ h1, h2, h3 {
 }
 
 /* ==== Seção: Habilidades (Skills) ==== */
-
-/* Organiza os 4 grandes blocos em 2 colunas */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -297,9 +392,8 @@ h1, h2, h3 {
     margin-top: 3rem;
 }
 
-/* O fundo escuro do Bloco Maior */
 .skill-category {
-    background: #111113; /* Cor escura do fundo do card */
+    background: #111113;
     padding: 1.5rem;
     border-radius: 12px;
     border: 1px solid var(--color-border);
@@ -310,7 +404,6 @@ h1, h2, h3 {
     border-color: var(--color-primary);
 }
 
-/* Título de cada Bloco (Ex: Front-end com o ícone do lado) */
 .skill-header {
     display: flex;
     align-items: center;
@@ -327,20 +420,18 @@ h1, h2, h3 {
     margin: 0;
 }
 
-/* Grade para as caixinhas menores dentro do bloco */
 .skill-items {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 itens por linha */
+    grid-template-columns: repeat(3, 1fr); 
     gap: 1rem;
 }
 
-/* A caixinha menor de cada habilidade */
 .skill-item {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: #1a1a1c; /* Tom um pouquinho mais claro que o fundo */
+    background: #1a1a1c; 
     padding: 1rem 0.5rem;
     border-radius: 8px;
     gap: 0.8rem;
@@ -354,30 +445,18 @@ h1, h2, h3 {
     transform: translateY(-2px);
 }
 
-/* Tamanho do ícone da linguagem (Devicon e Lucide) */
 .skill-item i, .skill-item svg {
     font-size: 2.2rem;
     width: 2.2rem;
     height: 2.2rem;
-    color: var(--color-primary); /* Cor para os ícones que não são coloridos por padrão */
+    color: var(--color-primary); 
 }
 
-/* Texto embaixo do ícone */
 .skill-item span {
     font-size: 0.8rem;
     color: var(--color-text-muted);
     text-align: center;
     font-weight: 500;
-}
-
-/* Responsividade para celular: 1 coluna para tudo */
-@media (max-width: 768px) {
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
-    .skill-items {
-        grid-template-columns: repeat(2, 1fr); /* Deixa 2 ícones por linha no celular para não espremer */
-    }
 }
 
 /* ==== Seção: Projetos ==== */
@@ -477,15 +556,14 @@ h1, h2, h3 {
 }
 
 /* ==== Seção: Contato ==== */
-
-/* Organiza os cards automaticamente no espaço da tela */
 .contact-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Força 2 colunas do mesmo tamanho */
+    grid-template-columns: repeat(2, 1fr); 
     gap: 1.5rem;
-    max-width: 700px; /* Reduzi um pouco a largura máxima para os cards não ficarem muito esticados */
+    max-width: 700px; 
     margin: 0 auto;
 }
+
 .text-left {
     text-align: left;
 }
@@ -505,19 +583,19 @@ h1, h2, h3 {
 
 .contact-card:hover {
     border-color: var(--color-primary);
-    transform: translateY(-5px); /* Efeito de pular para cima igual aos outros cards */
+    transform: translateY(-5px); 
     box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
 }
 
 .contact-icon {
-    background: rgba(249, 115, 22, 0.1); 
+    background: rgba(17, 32, 235, 0.1); 
     color: var(--color-primary);
     padding: 1rem;
     border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0; /* Impede o ícone de espremer */
+    flex-shrink: 0; 
 }
 
 .contact-details h4 {
@@ -544,6 +622,7 @@ h1, h2, h3 {
     overflow: hidden;
     width: 100%;
 }
+
 /* ==== Rodapé ==== */
 .footer {
     padding: 2rem;
@@ -580,50 +659,7 @@ h1, h2, h3 {
     color: var(--color-primary);
 }
 
-/* ==== Animação de Scroll Hero ==== */
-.mouse-scroll {
-    position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0.6;
-    animation: bounce 2s infinite;
-}
-
-.mouse {
-    width: 26px;
-    height: 40px;
-    border: 2px solid var(--color-text-muted);
-    border-radius: 15px;
-    position: relative;
-}
-
-.mouse::before {
-    content: '';
-    position: absolute;
-    top: 6px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 4px;
-    height: 8px;
-    background: var(--color-text-muted);
-    border-radius: 2px;
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0) translateX(-50%);
-    }
-    40% {
-        transform: translateY(-10px) translateX(-50%);
-    }
-    60% {
-        transform: translateY(-5px) translateX(-50%);
-    }
-}
-
 /* ==== Seção: Experiência (Timeline) ==== */
-
 .timeline {
     position: relative;
     max-width: 800px;
@@ -631,7 +667,6 @@ h1, h2, h3 {
     padding-left: 2.5rem;
 }
 
-/* A linha vertical da Timeline */
 .timeline::before {
     content: '';
     position: absolute;
@@ -651,7 +686,6 @@ h1, h2, h3 {
     margin-bottom: 0;
 }
 
-/* A bolinha redonda com o ícone */
 .timeline-dot {
     position: absolute;
     left: -2.5rem;
@@ -668,7 +702,6 @@ h1, h2, h3 {
     z-index: 1;
 }
 
-/* O quadrado de conteúdo (Card) */
 .timeline-content {
     background: #111113;
     padding: 1.8rem;
@@ -683,11 +716,10 @@ h1, h2, h3 {
     box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
 }
 
-/* A data com fundo laranja */
 .timeline-date {
     display: inline-block;
     padding: 0.4rem 1rem;
-    background: rgba(253, 253, 253, 0.1); /* Laranja transparente */
+    background: rgba(17, 32, 235, 0.1); 
     color: var(--color-primary);
     border-radius: 20px;
     font-size: 0.85rem;
@@ -714,21 +746,48 @@ h1, h2, h3 {
     line-height: 1.6;
 }
 
+/* ==== Efeitos Visuais (Animação de Scroll) ==== */
+.hidden {
+    opacity: 0;
+    transform: translateY(80px) scale(0.9); 
+    transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.delay-1 { transition-delay: 100ms; }
+.delay-2 { transition-delay: 200ms; }
+.delay-3 { transition-delay: 300ms; }
+
+/* ==== Efeito Máquina de Escrever ==== */
+.typing-effect {
+    display: inline-flex; 
+    overflow: hidden; 
+    white-space: nowrap; 
+    border-right: 3px solid var(--color-primary); 
+    animation: 
+        typing 2s steps(20, end) forwards, 
+        blink-caret 0.8s step-end infinite; 
+    width: 0; 
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    30% { border-color: var(--color-primary); }
+}
+
 /* ==== Responsividade ==== */
-
-/* Regras extras para o e-mail não vazar da tela no celular */
-.contact-details {
-    overflow: hidden;
-    width: 100%;
-}
-
-.highlight-text {
-    word-break: break-word;
-}
-
 @media (max-width: 900px) {
     .hero-container {
-        flex-direction: column-reverse; /* Foto em cima, texto embaixo */
+        flex-direction: column-reverse; 
         text-align: center;
         padding-top: 3rem;
     }
@@ -748,7 +807,6 @@ h1, h2, h3 {
 }
 
 @media (max-width: 768px) {
-    /* Navbar e Seções Gerais */
     .nav-links {
         display: none; 
     }
@@ -771,7 +829,6 @@ h1, h2, h3 {
         justify-content: center;
     }
 
-    /* Linha do Tempo (Experiências) */
     .timeline {
         padding-left: 1.5rem;
     }
@@ -787,14 +844,12 @@ h1, h2, h3 {
         height: 16px;
     }
     
-    /* Grades de Habilidades, Projetos e CONTATO (Atualizado) */
     .skills-grid, 
     .projects-grid, 
     .contact-container {
-        grid-template-columns: 1fr; /* Força tudo a ficar em 1 coluna no celular */
+        grid-template-columns: 1fr; 
     }
 
-    /* Ajuste fino dos cards de contato para telas pequenas */
     .contact-card {
         padding: 1rem;
         gap: 0.8rem;
